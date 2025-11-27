@@ -18,5 +18,5 @@ app.listen(port, () => {
 });
 
 app.post("/project", postProject);
-app.get("./projects", getProjects);
+app.get("/projects", getProjects);
 app.get("/project/:id",getProjectId);

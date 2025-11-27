@@ -1,6 +1,11 @@
-const mysql = require("./database/mysql-pool");
+const mysql = require("../database/mysql-pool");
 
-const postProject = async
+const postProject = async(req,res) => {
+    try {
+
+    }
+    catch {}
+}
 
 
 module.exports = {

@@ -80,7 +80,7 @@ const HomePage = () => {
     };
 
     const addProject = () => {
-            postProject({  name, slogan, repo, demo,projectPhoto, authorPhoto, technologies, desc, autor, job }).then(() => {
+            postProject({  project_name: name, slogan, description: desc, technologies, photo_url: projectPhoto, github_url: repo, demo_url: demo, name, job, photo:authorPhoto }).then(() => {
             navigate("/list_page");
         })
     };

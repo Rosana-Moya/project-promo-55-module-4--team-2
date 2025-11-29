@@ -5,6 +5,9 @@ import Preview from "../components/Preview";
 import Form from "../components/Form";
 import Footer from '../components/Footer';
 import '../styles/home-page.css';
+import { postProject } from '../services/api';
+import { useNavigate } from "react-router-dom";
+
 
 const HomePage = () => {
 
@@ -18,6 +21,13 @@ const HomePage = () => {
     const [job, setJob] = useState(ls.get("setJob") || "");
     const [ projectPhoto, setProjectPhoto ] = useState(ls.get("projectPhoto") || "");
     const [ authorPhoto, setAuthorPhoto ] = useState(ls.get("authorPhoto") || "");
+    const navigate = useNavigate()
+
+//     useEffect (() => {
+//     getProjects().then((data) => {
+//     setProjects(data);
+//     })
+//   }, []);
 
     const updateName = (value) => {
         setName (value);
@@ -69,6 +79,13 @@ const HomePage = () => {
         ls.set("authorPhoto", fileBase64);
     };
 
+    const addProject = () => {
+            postProject({  name, slogan, repo, demo,projectPhoto, authorPhoto, technologies, desc, autor, job }).then(() => {
+            navigate("/list_page");
+        })
+    };
+
+
     return (
         <>
             <Header />
@@ -104,6 +121,7 @@ const HomePage = () => {
                     updateJob={updateJob}
                     updateProjectPhoto={updateProjectPhoto}
                     updateAuthorPhoto={updateAuthorPhoto}
+                    addProject={addProject}
                 />
             </div>
             <Footer />

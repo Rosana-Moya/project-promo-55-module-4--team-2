@@ -2,7 +2,7 @@ const mysql = require("../database/mysql-pool");
 
 const getProjects = async (req, res) => {
   try {
-    const query = "SELECT * FROM projects WHERE deleted_at IS NULL";
+    const query = "SELECT * FROM projects";
     const connection = await mysql.getConnection();
     const [data] = await connection.query(query);
    

@@ -1,6 +1,8 @@
 import "react";
-import ls from '../services/localStorage';
+//import ls from '../services/localStorage';
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { getProjects } from "../services/api";
 import HeaderList from "../components/HeaderList";
 import Card from "../components/Card";
 import Footer from "../components/Footer";
@@ -8,35 +10,45 @@ import '../styles/list-page.css';
 
 const ListPage = () => {
 
-const initialProjects =[
-    {
-        name: "Proyecto 1",
-        slogan: "Slogan del proyecto 1",
-        repo: "Repositorio del proyecto 1",
-        demo : "Demo del proyecto 1",
-        technologies: "Tecnologías del proyecto 1",
-        desc: "Descripción del proyecto 1",
-        autor: "Autor del proyecto 1",
-        job: "Puesto del autor 1",
-        id:"1"
-    },
-    {
-        name: "Proyecto 2",
-        slogan: "Slogan del proyecto 2",
-        repo: "Repositorio del proyecto 2",
-        demo : "Demo del proyecto 2",
-        technologies: "Tecnologías del proyecto 2",
-        desc: "Descripción del proyecto 2",
-        autor: "Autor del proyecto 2",
-        job: "Puesto del autor 2",
-        id:"2"
-    },
+// const initialProjects =[
+//     {
+//         name: "Proyecto 1",
+//         slogan: "Slogan del proyecto 1",
+//         repo: "Repositorio del proyecto 1",
+//         demo : "Demo del proyecto 1",
+//         technologies: "Tecnologías del proyecto 1",
+//         desc: "Descripción del proyecto 1",
+//         autor: "Autor del proyecto 1",
+//         job: "Puesto del autor 1",
+//         id:"1"
+//     },
+//     {
+//         name: "Proyecto 2",
+//         slogan: "Slogan del proyecto 2",
+//         repo: "Repositorio del proyecto 2",
+//         demo : "Demo del proyecto 2",
+//         technologies: "Tecnologías del proyecto 2",
+//         desc: "Descripción del proyecto 2",
+//         autor: "Autor del proyecto 2",
+//         job: "Puesto del autor 2",
+//         id:"2"
+//     },
 
-];  
+// ];  
 
-const addedProjects = ls.get ("AddedProjects", [])
+// const addedProjects = ls.get ("AddedProjects", [])
 
-const projects = [...initialProjects, ...addedProjects]
+// const projects = [...initialProjects, ...addedProjects]
+
+const [projects, setProjects] = useState([]);
+
+    useEffect(() => {
+        // fetch - api.js
+        getProjects().then((data) => {
+            // modificar el estado
+            setProjects(data);
+        })
+    }, [])
 
      return (
      <>
@@ -46,17 +58,17 @@ const projects = [...initialProjects, ...addedProjects]
         {projects
           .filter((project) => project.id)
           .map((project) => (
-            <li key={project.id}>
+            <li key={project.id_project}>
               <Card
-                name={project.name}
+                name={project.project_name}
                 slogan={project.slogan}
-                repo={project.repo}
+                repo={project.github}
                 technologies={project.technologies}
                 demo={project.demo}
-                desc={project.desc}
-                autor={project.autor}
+                desc={project.description}
+                autor={project.author_name}
                 job={project.job}
-                authorPhoto={project.authorPhoto}
+                authorPhoto={project.photo_author}
                 id={project.id}
               />
               <div className="button-container">

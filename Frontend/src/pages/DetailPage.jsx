@@ -54,16 +54,16 @@ const DetailPage = () => {
     <>
       <HeaderList />
       <Preview
-        name={project.project_name}
+        name={project.name}
         slogan={project.slogan}
-        repo={project.repo}
+        repo={project.github}
         technologies={project.technologies}
         demo={project.demo}
-        desc={project.desc}
+        desc={project.description}
         autor={project.autor}
         job={project.job}
         authorPhoto={project.authorPhoto}
-        projectPhoto={project.projectPhoto}
+        projectPhoto={project.photo}
         id={project.id}
       />
     <Footer />

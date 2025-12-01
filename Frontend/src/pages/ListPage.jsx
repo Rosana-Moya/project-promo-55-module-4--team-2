@@ -58,17 +58,17 @@ const [projects, setProjects] = useState([]);
         {projects
           .filter((project) => project.id)
           .map((project) => (
-            <li key={project.id_project}>
+            <li key={project.id}>
               <Card
-                name={project.project_name}
+                name={project.name}
                 slogan={project.slogan}
                 repo={project.github}
                 technologies={project.technologies}
                 demo={project.demo}
                 desc={project.description}
-                autor={project.author_name}
+                autor={project.author}
                 job={project.job}
-                authorPhoto={project.photo_author}
+                authorPhoto={project.authorPhoto}
                 id={project.id}
               />
               <div className="button-container">

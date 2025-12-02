@@ -61,6 +61,10 @@
     margin: 0 20px 0 20px;
 }
 
+.preview-image {
+    width: 800px;
+}
+
 .preview-card {
     background-color: white;
     border-radius: 30px;

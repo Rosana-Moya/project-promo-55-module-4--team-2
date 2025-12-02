@@ -21,13 +21,7 @@ const HomePage = () => {
     const [job, setJob] = useState(ls.get("setJob") || "");
     const [ projectPhoto, setProjectPhoto ] = useState(ls.get("projectPhoto") || "");
     const [ authorPhoto, setAuthorPhoto ] = useState(ls.get("authorPhoto") || "");
-    const navigate = useNavigate()
-
-//     useEffect (() => {
-//     getProjects().then((data) => {
-//     setProjects(data);
-//     })
-//   }, []);
+    const navigate = useNavigate();
 
     const updateName = (value) => {
         setName (value);
@@ -79,12 +73,12 @@ const HomePage = () => {
         ls.set("authorPhoto", fileBase64);
     };
 
-    const addProject = () => {
+    const addProject = (event) => {
+            event.preventDefault();
             postProject({  project_name: name, slogan, description: desc, technologies, photo_url: projectPhoto, github_url: repo, demo_url: demo, name: autor, job, photo:authorPhoto }).then(() => {
-            navigate("/list_page");
+            navigate("/list-page");
         })
     };
-
 
     return (
         <>

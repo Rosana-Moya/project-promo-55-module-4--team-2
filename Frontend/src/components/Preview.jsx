@@ -7,9 +7,9 @@ const Preview = ({name, slogan, repo, technologies, demo, desc, autor, job, proj
   
     return (
       <div className="preview-container">
-        <div className="preview-image">
+        <div>
           {projectPhoto ? (
-            <img src={projectPhoto} alt="Previsualización del proyecto"/>
+            <img className="preview-image" src={projectPhoto} alt="Previsualización del proyecto"/>
           ) : (
             <img src={PreviewExample} alt="Imagen de ejemplo del proyecto" />
           )}

@@ -1,5 +1,4 @@
 import "react";
-// import ls from '../services/localStorage';
 
 const Form = ({ updateProjectPhoto, updateAuthorPhoto, name, updateName, slogan, updateSlogan, updateRepo, repo, updateDemo, demo, updateTechnologies, technologies, updateDesc, desc, autor, job, updateAutor, updateJob, addProject }) => {
 
@@ -40,27 +39,6 @@ const Form = ({ updateProjectPhoto, updateAuthorPhoto, name, updateName, slogan,
 
   const handleAutor = (ev) => updateAutor(ev.target.value);
   const handleJob = (ev) => updateJob(ev.target.value);
-
-  // const handleAddProject = (ev) => {
-  //   ev.preventDefault()
-  //   const newProject = {
-  //     name, slogan, repo, demo, technologies, desc, autor, job, projectPhoto: ls.get("projectPhoto"), authorPhoto: ls.get("authorPhoto"), id: JSON.stringify(Math.floor(Math.random() * 100))
-  // }
-
-  
-  //   const previousProjects = ls.get ("AddedProjects", [])  
-  //   ls.set ("AddedProjects", [...previousProjects, newProject])
-  //   updateName("")
-  //   updateSlogan("")
-  //   updateRepo("")
-  //   updateDemo("")
-  //   updateTechnologies("")
-  //   updateDesc("")
-  //   updateAutor("")
-  //   updateJob("")
-  //   updateProjectPhoto("")
-  //   updateAuthorPhoto("")
-  // }
 
   return (
     <div className="form-container">

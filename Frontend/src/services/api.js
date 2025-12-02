@@ -5,18 +5,20 @@ export const getProjects = () => {
             const cleanData = data.map((item) => {
                 return {
                     id: item.id_project,
-                    name: item.project_name,
+                    projectName: item.project_name,
                     slogan: item.slogan,
                     description: item.description,
                     technologies: item.technologies,
-                    photo: item.photo_url,
+                    projectPhoto: item.photo_url,
                     github: item.github_url,
                     demo: item.demo_url,
-                    author: item.name,
+                    authorName: item.name,
                     job: item.job,
                     authorPhoto: item.photo
                 };
             });
+            console.log("data", data)
+            console.log("cleanData", cleanData)
             return cleanData;
         })
         .catch((error) => {
@@ -48,14 +50,14 @@ export const getProjectById = (id) => {
             const cleanData = data.map((item) => {
                 return {
                     id: item.id_project,
-                    name: item.project_name,
+                    projectName: item.project_name,
                     slogan: item.slogan,
                     description: item.description,
                     technologies: item.technologies,
-                    photo: item.photo_url,
+                    projectPhoto: item.photo_url,
                     github: item.github_url,
                     demo: item.demo_url,
-                    author: item.name,
+                    authorName: item.name,
                     job: item.job,
                     authorPhoto: item.photo
                 };

@@ -60,13 +60,13 @@ const [projects, setProjects] = useState([]);
           .map((project) => (
             <li key={project.id}>
               <Card
-                name={project.name}
+                name={project.projectName}
                 slogan={project.slogan}
                 repo={project.github}
                 technologies={project.technologies}
                 demo={project.demo}
                 desc={project.description}
-                autor={project.author}
+                autor={project.authorName}
                 job={project.job}
                 authorPhoto={project.authorPhoto}
                 id={project.id}

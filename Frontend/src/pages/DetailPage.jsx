@@ -1,15 +1,18 @@
 import "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { getProjectById } from "../services/api";
+import { getProjectById, patchProject } from "../services/api";
 import HeaderList from "../components/HeaderList";
 import Preview from "../components/Preview";
 import Footer from "../components/Footer";
+import '../styles/detail-page.css';
 
 const DetailPage = () => {
   const { id } = useParams();
 
   const [project, setProject] = useState(null);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     getProjectById(id).then(setProject);
@@ -19,9 +22,20 @@ const DetailPage = () => {
     return <p>Proyecto no encontrado</p>;
   }
 
+  const handleDelete = () => {
+      patchProject().then(() => {
+            navigate("/list-page");
+        })
+    };
+
   return (
     <>
       <HeaderList />
+      <div className="button-detail-container">
+        <Link to={"/list-page"}>
+            <button className="header-button">VOLVER AL LISTADO</button>
+        </Link>
+      </div>
       <Preview
         name={project.projectName}
         slogan={project.slogan}
@@ -35,6 +49,7 @@ const DetailPage = () => {
         projectPhoto={project.projectPhoto}
         id={project.id}
       />
+      <button className="detail-button" onClick={handleDelete}>Eliminar proyecto</button>
     <Footer />
     </>
   );

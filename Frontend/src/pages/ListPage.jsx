@@ -15,7 +15,7 @@ const [projects, setProjects] = useState([]);
         getProjects().then((data) => {
             setProjects(data);
         })
-    }, [])
+    }, []);
 
      return (
      <>

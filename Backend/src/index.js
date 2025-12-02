@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-const { postProject, getProjects, getProjectId } = require("./controllers");
+const { postProject, getProjects, getProjectId, patchProjectId } = require("./controllers");
 const app = express();
 const port = 3000;
 
@@ -19,3 +19,4 @@ app.listen(port, () => {
 app.post("/project", postProject);
 app.get("/projects", getProjects);
 app.get("/project/:id",getProjectId);
+app.patch("/delete-project/:id", patchProjectId);

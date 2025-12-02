@@ -43,6 +43,19 @@ export const postProject = (data) => {
         });
 };
 
+export const patchProject = (id) => {
+    return fetch(`http://localhost:3000/delete-project/${id}`, {
+        method: "PATCH",
+    })
+        .then((response) => response.json())
+        .then(() => {
+            return;
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+};
+
 export const getProjectById = (id) => {
     return fetch(`http://localhost:3000/project/${id}`)
         .then((response) => response.json())
@@ -62,8 +75,6 @@ export const getProjectById = (id) => {
                     authorPhoto: item.photo
                 };
             });
-
-            // Retornar el objeto que hay dentro del array
             return cleanData[0];
         })
         .catch((error) => console.log(error));

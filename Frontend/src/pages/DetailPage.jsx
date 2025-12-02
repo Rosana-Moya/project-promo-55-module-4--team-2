@@ -23,7 +23,7 @@ const DetailPage = () => {
   }
 
   const handleDelete = () => {
-      patchProject().then(() => {
+      patchProject(id).then(() => {
             navigate("/list-page");
         })
     };
@@ -49,7 +49,9 @@ const DetailPage = () => {
         projectPhoto={project.projectPhoto}
         id={project.id}
       />
-      <button className="detail-button" onClick={handleDelete}>Eliminar proyecto</button>
+      <div className="button-detail-container">
+        <button className="delete-button" onClick={handleDelete}>Eliminar proyecto</button>
+      </div>
     <Footer />
     </>
   );

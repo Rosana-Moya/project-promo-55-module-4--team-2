@@ -1,5 +1,5 @@
 export const getProjects = () => {
-    return fetch("http://localhost:3000/projects")
+    return fetch("http://localhost:3000/api/projects")
         .then((response) => response.json())
         .then((data) => {
             const cleanData = data.map((item) => {
@@ -22,7 +22,7 @@ export const getProjects = () => {
 };
 
 export const postProject = (data) => {
-    return fetch("http://localhost:3000/project", {
+    return fetch("http://localhost:3000/api/project", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -36,7 +36,7 @@ export const postProject = (data) => {
 };
 
 export const patchProject = (id) => {
-    return fetch(`http://localhost:3000/delete-project/${id}`, {
+    return fetch(`http://localhost:3000/api/delete-project/${id}`, {
         method: "PATCH",
     })
         .then((response) => response.json())
@@ -47,7 +47,7 @@ export const patchProject = (id) => {
 };
 
 export const getProjectById = (id) => {
-    return fetch(`http://localhost:3000/project/${id}`)
+    return fetch(`http://localhost:3000/api/project/${id}`)
         .then((response) => response.json())
         .then((data) => {
             const cleanData = data.map((item) => {

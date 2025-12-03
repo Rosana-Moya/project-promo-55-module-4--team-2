@@ -3,7 +3,7 @@ const cors = require("cors");
 const path = require("path");
 const { postProject, getProjects, getProjectId, patchProjectId } = require("./controllers");
 const app = express();
-const port = 3000;
+const port = process.env.DB_PORT || 3000;
 
 require("dotenv").config();
 
@@ -14,10 +14,10 @@ app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);
 });
 
-app.post("/project", postProject);
-app.get("/projects", getProjects);
-app.get("/project/:id",getProjectId);
-app.patch("/delete-project/:id", patchProjectId);
+app.post("/api/project", postProject);
+app.get("/api/projects", getProjects);
+app.get("/api/project/:id",getProjectId);
+app.patch("/api/delete-project/:id", patchProjectId);
 app.use("/project-promo-55-module-3-team-2", express.static(path.join(__dirname, "..", "public")));
 app.use(express.static(path.join(__dirname, "..", "public")));
 app.use((req, res) => {

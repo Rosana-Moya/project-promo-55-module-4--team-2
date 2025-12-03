@@ -1,4 +1,5 @@
 import "react";
+import PropTypes from "prop-types";
 
 const Form = ({ updateProjectPhoto, updateAuthorPhoto, name, updateName, slogan, updateSlogan, updateRepo, repo, updateDemo, demo, updateTechnologies, technologies, updateDesc, desc, autor, job, updateAutor, updateJob, addProject }) => {
 
@@ -82,7 +83,26 @@ const Form = ({ updateProjectPhoto, updateAuthorPhoto, name, updateName, slogan,
 
 export default Form;
 
-    
- 
+Form.propTypes = {
+    updateProjectPhoto: PropTypes.string.isRequired,
+    updateAuthorPhoto: PropTypes.string.isRequired,
+    updateName: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    slogan: PropTypes.string.isRequired,
+    updateSlogan: PropTypes.string.isRequired,
+    repo: PropTypes.string.isRequired,
+    updateRepo: PropTypes.string.isRequired,
+    technologies: PropTypes.string.isRequired,
+    updateTechnologies: PropTypes.string.isRequired,
+    demo: PropTypes.string.isRequired,
+    updateDemo: PropTypes.string.isRequired,
+    desc: PropTypes.string.isRequired,
+    updateDesc: PropTypes.string.isRequired,
+    autor: PropTypes.string.isRequired,
+    updateAutor: PropTypes.string.isRequired,
+    job: PropTypes.string.isRequired,
+    updateJob: PropTypes.string.isRequired,
+    addProject: PropTypes.string.isRequired,
+}
 
 

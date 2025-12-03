@@ -1,7 +1,7 @@
 import  "react";
 import PreviewExample from '../images/ebook-example.jpg';
 import Card from '../components/Card';
-
+import PropTypes from "prop-types";
 
 const Preview = ({name, slogan, repo, technologies, demo, desc, autor, job, projectPhoto, authorPhoto}) => {
   
@@ -30,3 +30,16 @@ const Preview = ({name, slogan, repo, technologies, demo, desc, autor, job, proj
 };
 
 export default Preview;
+
+Preview.propTypes = {
+    name: PropTypes.string.isRequired,
+    slogan: PropTypes.string.isRequired,
+    repo: PropTypes.string.isRequired,
+    technologies: PropTypes.string.isRequired,
+    demo: PropTypes.string.isRequired,
+    desc: PropTypes.string.isRequired,
+    autor: PropTypes.string.isRequired,
+    job: PropTypes.string.isRequired,
+    projectPhoto: PropTypes.string.isRequired,
+    authorPhoto: PropTypes.string.isRequired,
+}

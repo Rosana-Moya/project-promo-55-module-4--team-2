@@ -2,7 +2,7 @@ import "react";
 import Avatar from '../images/avatar.webp';
 import GitHubLogo from '../images/github.svg';
 import GlobeLogo from '../images/globe-solid.svg';
-
+import PropTypes from "prop-types";
 
 const Card = ({name, slogan, repo, technologies, demo, desc, autor, job, authorPhoto, id}) => {
 
@@ -38,3 +38,16 @@ const Card = ({name, slogan, repo, technologies, demo, desc, autor, job, authorP
 };
 
 export default Card;
+
+Card.propTypes = {
+    name: PropTypes.string.isRequired,
+    slogan: PropTypes.string.isRequired,
+    repo: PropTypes.string.isRequired,
+    technologies: PropTypes.string.isRequired,
+    demo: PropTypes.string.isRequired,
+    desc: PropTypes.string.isRequired,
+    autor: PropTypes.string.isRequired,
+    job: PropTypes.string.isRequired,
+    authorPhoto: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+}

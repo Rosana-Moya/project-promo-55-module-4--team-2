@@ -10,7 +10,7 @@ const getProjects = async (req, res) => {
     res.json(data);
   } catch {
     res.status(400).json({ error: "No se han podido obtener los proyectos" });
-  }
+  };
 };
 
 

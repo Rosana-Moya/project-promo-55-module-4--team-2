@@ -8,8 +8,7 @@ const getProjects = async (req, res) => {
    
 
     res.json(data);
-  } catch (err) {
-    console.error("Error al obtener los proyectos:", err);
+  } catch {
     res.status(400).json({ error: "No se han podido obtener los proyectos" });
   }
 };

@@ -17,12 +17,7 @@ export const getProjects = () => {
                     authorPhoto: item.photo
                 };
             });
-            console.log("data", data)
-            console.log("cleanData", cleanData)
             return cleanData;
-        })
-        .catch((error) => {
-            console.log(error)
         });
 };
 
@@ -37,9 +32,6 @@ export const postProject = (data) => {
         .then((response) => response.json())
         .then(() => {
             return;
-        })
-        .catch((error) => {
-            console.log(error);
         });
 };
 
@@ -50,9 +42,6 @@ export const patchProject = (id) => {
         .then((response) => response.json())
         .then(() => {
             return;
-        })
-        .catch((error) => {
-            console.log(error);
         });
 };
 
@@ -77,5 +66,4 @@ export const getProjectById = (id) => {
             });
             return cleanData[0];
         })
-        .catch((error) => console.log(error));
 };

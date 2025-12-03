@@ -9,8 +9,7 @@ const patchProjectId = async (req, res) => {
         const connection = await mysql.getConnection();
         await connection.query(query, [id]);
         res.send("Proyecto eliminado");
-    } catch (err) {
-        console.error(err);
+    } catch {
         res.status(500).send("Algo ha ido mal");
     }
 };

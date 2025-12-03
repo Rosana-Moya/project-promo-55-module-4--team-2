@@ -9,10 +9,6 @@ const getConnection = async () => {
     });
     await connection.connect();
 
-    console.log(
-        `Conexión establecida con la base de datos (identificador=${connection.threadId})`
-    );
-
     return connection;
 };
 

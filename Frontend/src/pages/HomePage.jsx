@@ -1,12 +1,12 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { postProject } from '../services/api';
 import ls from '../services/localStorage';
 import Header from "../components/Header";
 import Preview from "../components/Preview";
 import Form from "../components/Form";
 import Footer from '../components/Footer';
 import '../styles/home-page.css';
-import { postProject } from '../services/api';
-import { useNavigate } from "react-router-dom";
 
 
 const HomePage = () => {

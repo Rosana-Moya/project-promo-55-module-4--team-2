@@ -1,6 +1,6 @@
 import  "react";
 import PreviewExample from '../images/ebook-example.jpg';
-import Card from '../components/Card';
+import Card from './Card';
 import PropTypes from "prop-types";
 
 const Preview = ({name, slogan, repo, technologies, demo, desc, autor, job, projectPhoto, authorPhoto}) => {

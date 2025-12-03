@@ -9,6 +9,7 @@ const getProjectId = async (req, res) => {
         const query = "SELECT * FROM projects INNER JOIN authors ON projects.fk_author = authors.id_author WHERE id_project = ?";
         const connection = await mysql.getConnection();
         const data = await connection.query(query, [id]);
+        await connection.end();
         res.json(data[0]);
     } catch {
         res.send("Algo ha ido mal");

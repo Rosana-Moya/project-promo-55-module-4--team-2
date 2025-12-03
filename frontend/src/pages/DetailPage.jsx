@@ -24,6 +24,7 @@ const DetailPage = () => {
 
   const handleDelete = () => {
       patchProject(id).then(() => {
+        
             navigate("/list-page");
         })
     };

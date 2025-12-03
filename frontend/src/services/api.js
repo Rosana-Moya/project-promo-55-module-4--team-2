@@ -41,6 +41,7 @@ export const patchProject = (id) => {
     })
         .then((response) => response.json())
         .then(() => {
+
             return;
         });
 };

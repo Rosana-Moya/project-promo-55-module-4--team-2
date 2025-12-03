@@ -5,6 +5,7 @@ const getProjects = async (req, res) => {
     const query = "SELECT * FROM projects INNER JOIN authors ON projects.fk_author = authors.id_author WHERE deleted_at IS NULL";
     const connection = await mysql.getConnection();
     const [data] = await connection.query(query);
+    await connection.end();
    
 
     res.json(data);

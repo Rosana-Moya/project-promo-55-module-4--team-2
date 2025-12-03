@@ -25,6 +25,7 @@ const postProject = async (req, res) => {
         const connection = await mysql.getConnection();
         const dataAuthor = await connection.query(queryAuthor, [name, job, photo]);
         await connection.query(queryProject, [project_name, slogan, description, technologies, photo_url, github_url, demo_url, dataAuthor[0].insertId]);
+        await connection.end();
        
 
         res.status(201).json({ message: "Proyecto creado" }); 

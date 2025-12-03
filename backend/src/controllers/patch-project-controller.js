@@ -8,7 +8,8 @@ const patchProjectId = async (req, res) => {
         const query = "UPDATE projects SET deleted_at = NOW() WHERE id_project = ?";
         const connection = await mysql.getConnection();
         await connection.query(query, [id]);
-        res.send("Proyecto eliminado");
+        await connection.end();
+        res.json({ message: "Proyecto eliminado" });
     } catch {
         res.status(500).send("Algo ha ido mal");
     }
